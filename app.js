@@ -2,8 +2,11 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 app.use(express.json());
+app.use(express.urlencoded({extended: false}));
 const cors = require('cors')
-app.use(cors())
+app.use(cors({
+    origin: ["http://localhost:3000", "http://waitlist-app.onrender.com"]
+}));
 // const bcrypt = require("bcryptjs");
 
 
